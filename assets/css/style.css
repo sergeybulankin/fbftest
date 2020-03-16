@@ -385,3 +385,51 @@ html, body {
     text-indent: 30px;
     text-align: justify;
 }
+
+.sb_sbersafe-pay__ps{
+    opacity: .35; */
+    display: block;
+    max-width: 220px;
+    height: 30px;
+    background-image: url(../img/payment_system_.png);
+    background-repeat: no-repeat;
+    /* background-position: 50%; */
+    background-size: cover;
+}
+
+.security-text {
+    font-size: 10px;
+}
+
+.nav{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    margin-top: 0px;
+}
+
+.nav-link {
+    display: block;
+    color: #6b6b6b;
+    padding: 0px;
+    padding-right: 10px;
+}
+
+
+.btn.disabled
+{
+    opacity: 0.5;
+}
+
+.save_data{
+    position: absolute;
+    left: 250px;
+    line-height: 30px;
+    color: green;
+    font-weight: bold;
+    display: none;
+}

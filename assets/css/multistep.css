@@ -98,7 +98,8 @@ body
 	list-style-type: none;
 	position: relative;
 	text-align: center;
-	width: 25%;
+	/*width: 25%;*/
+	width: 33%;
 	z-index: 10;
 }
 .rms-wizard .rms-multistep-progressbar li.rms-step:before

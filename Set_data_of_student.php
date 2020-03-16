@@ -21,6 +21,7 @@ $pat_parent=$_POST['pat_parent'];
 $adress=$_POST['adress'];
 $seriya=$_POST['seriya'];
 $nomer=$_POST['nomer'];
+$email=$_POST['email'];
 
 $query="INSERT INTO `students` (`id_students`, `fam`, `name`, `otch`,";
 $query.=" `cat`, `class`, `city`, `school`, `tel`, ";
@@ -43,11 +44,29 @@ if (set_raw($query))
 	$query.=" '".$fam_parent."', '".$name_parent."', '".$pat_parent."', '".$adress."', ";
 	$query.=" '".$seriya."', '".$nomer."', '".$email."')";
 	
-	if (set_raw($query))
+	if ($id_students=set_raw($query))
 	{
 		$result['error']='false';
+		$result['id_students']=$id_students;
 		$result['log']=$log;
 		$result['pas']=$pas;
+		//Отправка письма зарегистрированному пользователю
+		$header = 'Республиканская интернет-олимпиала. Регистрация.';
+
+		$text = '<p><em><strong>Поздравляем! Регистрация успешно завершена!</strong></em></p>
+		<p>Участник: <b> '.$fam.' '.$name.' '.$pat.'</b></p>
+		<p>Логин: <b>'.$log.' </b></p>
+		<p>Пароль: <b>'.$pas.'</b></p>
+		<p>Руководитель: <b>'.$ruk.'</b></p>
+		<p>Квитанция на оплату прикреплена к письму.</p>
+		<p>Спасибо за проявленный интерес к изучению башкирского языка. Напоминаем, что олимпиада будет проходить с 1 по 15 апреля.</p>
+		<p><strong>Всего Вам доброго!</strong></p>
+		<br>
+		<p>Дополнительная информация у организаторов олимпиады по телефону <b>8-917-857-44-33!</b></p>
+		<br><br><br>------------<br>С уважением, организаторы Республиканской интернет-олимпиады!';
+
+		send_mail($email,$header,$text,true,$_POST);  
+
 		echo json_encode($result);
 	}
 	else
