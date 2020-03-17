@@ -1,0 +1,13 @@
+{
+    "name": "root/htdocs",
+    "authors": [
+        {
+            "name": "elmira1988",
+            "email": "elmira.sharapova@yandex.ru"
+        }
+    ],
+    "require": {
+        "mpdf/mpdf": "^8.0",
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
