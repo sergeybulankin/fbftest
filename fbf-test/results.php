@@ -16,7 +16,8 @@ echo '<tr>
 		  <td><b>Класс</b></td>
 		  <td><b>Балл</b> <br>из 100</td>
 	  </tr>';
-					
+			
+$not_payment=0;			
 for ($i=0;$i<count($students);$i++)
 	{
 		
@@ -57,8 +58,8 @@ for ($i=0;$i<count($students);$i++)
 		$payment_online=count(get_raw("SELECT * FROM `payment_online` WHERE `id_student`=".$students[$i]['id_students']." AND `result`=1"));
 		
 		echo '<tr';
-			if (($new_ball==0) && (($payment+$payment_online)==0)) echo " style='color:#9e9e9ea8;'";
-			if (($new_ball!=0) && (($payment+$payment_online)==0)) echo " style='color:red;'";
+			if (($new_ball==0) && (($payment+$payment_online)==0)) {echo " style='color:#9e9e9ea8;'";$not_payment++;}
+			if (($new_ball!=0) && (($payment+$payment_online)==0)) {echo " style='color:red;'";$not_payment++;}
 			if (($new_ball==0) && (($payment+$payment_online)!=0)) echo " style='color:green;'";
 		echo '>';
 		echo '<td>'.($i+1).'</td>';
@@ -81,8 +82,9 @@ for ($i=0;$i<count($students);$i++)
 		
 		echo '</tr>';
 	}
-	echo '</table>
-	<style>
+	echo '</table>';
+	echo '<input type="hidden" value="'.$not_payment.'">';
+	echo '<style>
 	body
 	{
 		padding:30px;

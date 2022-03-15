@@ -24,6 +24,7 @@
     <div class="sf_bgu">
         <!--Wizard Container-->        
             <div class="rms-container">
+			
                <!--Wizard Header-->
                 <div class="rms-wizard-header">
                     <h2 class="title">
@@ -89,8 +90,9 @@
         
     </div><!--background-color-->
     <!--Wizard Container Close-->
+	<?php include('functions.php');?>
     <div class="footer">
-        © 2020 Стерлитамакский филиал БашГУ, все права защищены
+        ©  <?php echo get_settings()['year']?>Стерлитамакский филиал БашГУ, все права защищены
     </div>
 </div>
 <!--Multi Step Wizard Close-->

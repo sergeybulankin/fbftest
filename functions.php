@@ -244,9 +244,9 @@ function make_pdf_rec($data){
 		//$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_GET['fam'].' '.$_GET['name'].' '.$_GET['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (020/024)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (020/24)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>'; 
-		
+		 
 		//$html.='<p>Плательщик (ФИО) ______________________________________________________________________________________</p>';
 		$html.='<p>Плательщик (ФИО) '.$_POST['fam_parent'].' '.$_POST['name_parent'].' '.$_POST['pat_parent'].'</p>';
 		$html.='<p>Адрес плательщика '.$_POST['adress'].'</p>';
@@ -308,7 +308,7 @@ function make_pdf_rec($data){
 		$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (020/024)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (020/24)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>';
 		
 		$html.='<p>Плательщик (ФИО) '.$_POST['fam_parent'].' '.$_POST['name_parent'].' '.$_POST['pat_parent'].'</p>';

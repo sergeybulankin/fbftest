@@ -40,8 +40,14 @@
 					Пароль:
 				</span>
 				<input name='pas' type="password" value='' />
-				
+				<?php
+				//if($_GET['test']==true)
+				//{
+				?>
 				<div class='sendsubmit'></div>
+				<?php
+				//}
+				?>
 			</div>
 			<div class='my_error'>Неверно введены логин/пароль</div>
 			
@@ -51,7 +57,7 @@
 			<img src="images/ornam_ln.png" style="float:left;margin-top:-100px;"/>
 			<img src="images/ornam_pn.png" style="float:right;margin-top:-100px;"/>
 			
-		 © 2018 Стерлитамакский филиал БашГУ, все права защищены
+		 © 2021 Стерлитамакский филиал БашГУ, все права защищены
 	</div>
 	 </div>
 	 

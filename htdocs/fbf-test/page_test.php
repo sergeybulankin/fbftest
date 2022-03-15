@@ -31,6 +31,7 @@
      <body>
 	 
 	<?php			
+	//print_r($_SESSION);
 					include '../functions.php';
 	
 					if (isset($_GET['category']))

@@ -1,9 +1,9 @@
 <?php 
 	session_start();
     include "../Open_db.php";
-     /*
+   /*  
 	//Впускаем только тестовые аккаунты 
-	$pos = strpos($_POST['login'], 'test');
+	$pos = strpos($_POST['login'], 'Тест');
 
 	if ($pos === false) {
 		return 0;exit;
@@ -15,11 +15,17 @@
 	 $query.=" `log`='".$_POST['login']."' AND ";
 	 $query.=" `pas`='".$_POST['pas']."'";
      $res=get_raw($query);
-	 
-	 
+	
      if (count($res)!==0)
 	{   //пользователь найден
-         $_SESSION['pas']=$_POST['pas'];//устанавливаем login & pass
+	
+		$payment=count(get_raw("SELECT * FROM `payment` WHERE `id_students`=".$res[0]['id_students']));
+
+		$payment_online=count(get_raw("SELECT * FROM `payment_online` WHERE `id_student`=".$res[0]['id_students']." AND `result`=1"));
+		
+		if(($payment+$payment_online)!=0)
+		{
+		 $_SESSION['pas']=$_POST['pas'];//устанавливаем login & pass
          $_SESSION['login']=$_POST['login'];
 		 $_SESSION['fam']=$res[0]['fam'];
 		 $_SESSION['name']=$res[0]['name'];
@@ -60,12 +66,13 @@
 			
 		 shuffle($arr); 
 		 $_SESSION['sort_questions']=$arr;//отсортированные эелемнты массива 
-  
-         echo '1';
+		}
+        
+        echo json_encode(array('result'=>'success','payment' => ($payment+$payment_online)));
     }
 	 else
 	 {  //пользователь не найден
-		echo 0;
+		echo json_encode(array('result'=>'error'));;
      }
 	/*}*/
 ?>

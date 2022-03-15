@@ -14,13 +14,22 @@ $('document').ready(function()
 		  url: '../fbf-test/avtorization.php',
 		  data: { login: login, pas: pas },
 		  success: function(data){
-			  if (data==0)//пользователь не найден
+			  data=JSON.parse(data);
+			  console.log(data); 
+			  if (data.result=='error')//пользователь не найден
 			  {
-				 $('.my_error').css('display','block');
+				 $('.my_error').css('display','block').text('Неверно введены логин/пароль');
 			  }
 			  else//пользователь найден, перекидываем на страницу с вопросами
 			  {
-				  window.location.reload('../fbf-test/protected.php');
+				if(data.payment!=0)
+				{
+					window.location.reload('../fbf-test/protected.php');
+				}
+				{
+					$('.my_error').css({'display':'block','position': 'absolute', 'top': '-85px'}).html('Уважаемый участник! <br><b>Факт оплаты Вами оргвзноса не установлен. </b><br>Пожалуйста, зарегистрируйтесь повторно, оплатив онлайн, либо отправьте скан-копию чека на почту fbftest.strbsu@yandex.ru.');
+				}
+				  
 			  }
 		  },
 		  dataType: 'html',

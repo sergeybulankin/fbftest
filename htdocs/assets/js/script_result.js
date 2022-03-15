@@ -45,3 +45,18 @@ $(document).ready(function(){
 		
 	});
 });
+
+
+function get_rec(id_students)
+{
+	var link_url = document.createElement("a");
+	var url = "../../generate_pdf_rec.php?id_students="+id_students;
+	link_url.download = url.substring((url.lastIndexOf("/") + 1), url.length);
+	link_url.href = url;
+	document.body.appendChild(link_url);
+	link_url.click();
+	document.body.removeChild(link_url);
+	delete link_url;
+	
+	//$.post("../../generate_pdf_rec.php");
+}

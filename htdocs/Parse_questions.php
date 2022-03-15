@@ -1,20 +1,21 @@
 <?php
 include 'functions.php';
+$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_4_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
 
-$filepath=$_SERVER['DOCUMENT_ROOT'].'/voprosi_5_2019_gos.xlsx'; 
- 
 function readExelFile($filepath)
 				{
-				require_once 'PHPExcel-1.8/Classes/PHPExcel.php'; //подключаем наш фреймворк
+				require_once 'vendor/phpoffice/phpexcel/Classes/PHPExcel.php'; //подключаем наш фреймворк
 				$ar=array(); // инициализируем массив
+				
 				$inputFileType = PHPExcel_IOFactory::identify($filepath);  // узнаем тип файла, excel может хранить файлы в разных форматах, xls, xlsx и другие
 				$objReader = PHPExcel_IOFactory::createReader($inputFileType); // создаем объект для чтения файла
 				$objPHPExcel = $objReader->load($filepath); // загружаем данные файла в объект
 				$ar = $objPHPExcel->getActiveSheet()->toArray(); // выгружаем данные из объекта в массив
 				//unlink($filepath);//удаляем файл после выгрузки
-				return $ar; //возвращаем массив
+				return $ar;// $ar; //возвращаем массив
 				}
 	$arr=readExelFile($filepath); 
+	//print_r($arr); 
 	
 	//print_r($arr);
 
@@ -54,7 +55,7 @@ function readExelFile($filepath)
 		
 		$i=$i+5;
 		
-		echo $question.'<br>';
+		echo $question.'<br>'; 
 		echo '1 '.$one.'<br>';
 		echo '2 '.$two.'<br>';
 		echo '3 '.$three.'<br>';
@@ -65,11 +66,11 @@ function readExelFile($filepath)
 		$query.=" `number`, `number_true`, `category`, ";
 		$query.=" `question`, `one`, `two`, `three`, `four`) ";
 		$query.=" VALUES (NULL, ";
-		$query.=" '".($k)."', '".$number_true."', '5', ";
+		$query.=" '".($k)."', '".$number_true."', '4', ";
 		$query.=" '".$question."', '".$one."', '".$two."', '".$three."', '".$four."');";
-		//set_raw($query);
+		//set_raw($query);  
 		echo '<br>'.$query.'<br>';
 		$k++;
 	}
-	
+
 ?>

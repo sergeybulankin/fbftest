@@ -125,19 +125,21 @@ function has_answer()//проверяем отвечал ли пользоват
 //отправка письма
  function send_mail($email,$header,$text,$file=false,$data)  
  {
-
-
   // Настройки
   $mail = new PHPMailer;
 
   $mail->isSMTP(); 
   $mail->SMTPDebug = 0;
-  $mail->Host = 'smtp.yandex.ru'; 
+  //$mail->Host = 'smtp.yandex.ru'; 
+  $mail->Host = 'ssl://smtp.mail.ru'; 
   $mail->SMTPAuth = true; 
-  $mail->Username = 'fbftest.strbsu';
-  $mail->Password = 'fbftest2019'; // Ваш пароль  
+  //$mail->Username = 'fbftest.strbsu';
+  $mail->Username = 'fbftest.strbsu@mail.ru';
+  //$mail->Password = 'fbftest2019'; // Ваш пароль 
+  $mail->Password = 'IspAa1TO%iy1'; // Ваш пароль 
+  
   $mail->CharSet = 'UTF-8';
-  $mail->SMTPSecure = 'ssl';  
+  $mail->SMTPSecure = 'SSL';  
   $mail->Port = 465;   
    
   $mail->SMTPOptions = [
@@ -151,7 +153,8 @@ function has_answer()//проверяем отвечал ли пользоват
   $mail->SMTPKeepAlive = true;   
   $mail->Mailer = "smtp"; // don't change the quotes!
 
-  $mail->setFrom('fbftest.strbsu@yandex.ru'); // Ваш Email
+  //$mail->setFrom('fbftest.strbsu@yandex.ru'); // Ваш Email
+  $mail->setFrom('fbftest.strbsu@mail.ru'); // Ваш Email
   $mail->addAddress($email);//Email получателя 
   $mail->isHTML(true); 
   $mail->Subject = $header; // Заголовок письма
@@ -173,7 +176,7 @@ function has_answer()//проверяем отвечал ли пользоват
   } 
  }
 
-function make_pdf_rec($data){
+function make_pdf_rec($data, $save = true){
 
 		$_POST=$data;
 		/*
@@ -183,7 +186,7 @@ function make_pdf_rec($data){
 		$_POST['fam_parent']='Татлыбаева';
 		$_POST['name_parent']='Гулькай';
 		$_POST['pat_parent']='Нурисламовна';
-		$_POST['adress']='г.Мелеуз,ул.Акмуллы,16/А';
+		$_POST['adress']='г.Мелеуз,ул.Акмуллы,16/А'; 
 		*/
  		$html = '
 		<style>
@@ -195,13 +198,13 @@ function make_pdf_rec($data){
 		<h1 style="text-align:right;font-size:8pt;">Приложение №2</h1>';
 		
 		$html.='<div style="width:28%;float:left;border-right:1px solid black;border-bottom:1px solid black;">';
-		$html.='<p style="text-align:center;">Извещение</p><br><br><br><br><br><br><br><br><br><br>';
+		$html.='<p style="text-align:center;">Извещение</p><br><br><br><br><br><br><br><br><br><br><br><br><br>';
 		$html.='<p style="text-align:center;">Кассир</p><br><br><br>';
 		$html.='</div>';
 		$html.='<div style="width:70%;float:left;border-bottom:1px solid black;padding-left:10px;">';
 		$html.='<p>Наименование получателя платежа: <span style="text-decoration:underline;font-weight:bold">';
-		$html.='Управление Федерального  казначейства по Республике Башкортостан ';
-		$html.='(Стерлитамакский филиал БашГУ,  СФ БашГУ,   л/с 20016Х52360).</p>';
+		$html.='УФК по Республике Башкортостан ';
+		$html.='(Стерлитамакский филиал БашГУ, СФБашГУ, л/с 20016Х52360 .</p>';
 		$html.='<table style="width:100%;">';
 		$html.='<tr>';
 		$html.='<td style="width:60%">';
@@ -212,7 +215,7 @@ function make_pdf_rec($data){
 		$html.='<div style="text-align:center;font-size:8pt;margin: 0 auto;display:block;font-weight:normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ИНН/КПП получателя платежа)</div>';
 		$html.='</div></td>';
 		$html.='<td style="width:40%;">';
-		$html.='<div style="text-align:center;width:100%;font-weight:bold;text-decoration:underline;">40501810965772400001.</div>';
+		$html.='<div style="text-align:center;width:100%;font-weight:bold;text-decoration:underline;">03214643000000010100.</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%;">(номер счета получателя платежа)</div>';
 		$html.='</td>';
 		$html.='</tr>';
@@ -221,14 +224,17 @@ function make_pdf_rec($data){
 		$html.='<table style="width:100%;display:inline:block">';
 		$html.='<tr>';
 		$html.='<td style="width:70%">';
-		$html.='<span style="text-decoration:underline;">в Отделение-НБ Республика Башкортостан г.Уфы  </span>';
+		$html.='<span style="text-decoration:underline;">в Отделение-НБ Республика Башкортостан Банка России//УФК по Республике Башкортостан г.Уфа  </span>';
 		$html.='<br><span style="font-size:8pt;">&nbsp;&nbsp;&nbsp;(наименование банка получателя платежа)</span>';
 		$html.='</td>';
 		$html.='<td style="width:30%;">';
-		$html.='<span>БИК&nbsp;&nbsp;</span><span style="font-weight:bold;text-decoration:underline;">048073001</span><br>';
+		$html.='<span>БИК&nbsp;&nbsp;</span><span style="font-weight:bold;text-decoration:underline;">018073401</span><br>';
 		$html.='</td>';
 		$html.='</tr>';
 		$html.='</table>';
+		
+		$html.='<div style="text-align:center;width:100%;font-weight:bold;">40102810045370000067</div>';
+		$html.='<div style="font-size:8pt;text-align:center;">&nbsp;&nbsp;&nbsp;(номер счета (единый казначейский, корр. счет))</div>';
 		
 		$html.='<table style="width:100%;">';
 		$html.='<tr>';
@@ -244,11 +250,11 @@ function make_pdf_rec($data){
 		$html.='</tr>';
 		$html.='</table>';
 		
-		$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
+		$html.='<div style="text-align:center;width:100%;margin-bottom:0px;margin-top:5px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
 		//$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_GET['fam'].' '.$_GET['name'].' '.$_GET['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (020/024)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (О21/14)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>'; 
 		
 		//$html.='<p>Плательщик (ФИО) ______________________________________________________________________________________</p>';
@@ -260,7 +266,7 @@ function make_pdf_rec($data){
 		$html.='</div>';
 		
 		$html.='<div style="width:28%;float:left;border-right:1px solid black;">';
-		$html.='<p style="text-align:center;"><br><br><br><br><br><br><br><br><br><br>Квитанция</p><br><br><br><br>';
+		$html.='<p style="text-align:center;"><br><br><br><br><br><br><br><br><br><br>Квитанция</p><br><br><br><br><br><br>';
 		$html.='<p style="text-align:center;">Кассир</p><br><br>';
 		$html.='</div>';
 		$html.='<div style="width:70%;float:left;padding-left:10px;">';
@@ -277,7 +283,7 @@ function make_pdf_rec($data){
 		$html.='<div style="text-align:center;font-size:8pt;margin: 0 auto;display:block;font-weight:normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ИНН/КПП получателя платежа)</div>';
 		$html.='</div></td>';
 		$html.='<td style="width:40%;">';
-		$html.='<div style="text-align:center;width:100%;font-weight:bold;text-decoration:underline;">40501810965772400001.</div>';
+		$html.='<div style="text-align:center;width:100%;font-weight:bold;text-decoration:underline;">03214643000000010100.</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%;">(номер счета получателя платежа)</div>';
 		$html.='</td>';
 		$html.='</tr>';
@@ -286,14 +292,17 @@ function make_pdf_rec($data){
 		$html.='<table style="width:100%;display:inline:block">';
 		$html.='<tr>';
 		$html.='<td style="width:70%">';
-		$html.='<span style="text-decoration:underline;">в Отделение-НБ Республика Башкортостан г.Уфы  </span>';
+		$html.='<span style="text-decoration:underline;">в Отделение-НБ Республика Башкортостан Банка России//УФК по Республике Башкортостан г.Уфа</span>';
 		$html.='<br><span style="font-size:8pt;">&nbsp;&nbsp;&nbsp;(наименование банка получателя платежа)</span>';
 		$html.='</td>';
 		$html.='<td style="width:30%;">';
-		$html.='<span>БИК&nbsp;&nbsp;</span><span style="font-weight:bold;text-decoration:underline;">048073001</span><br>';
+		$html.='<span>БИК&nbsp;&nbsp;</span><span style="font-weight:bold;text-decoration:underline;">018073401</span><br>';
 		$html.='</td>';
 		$html.='</tr>';
 		$html.='</table>';
+		
+		$html.='<div style="text-align:center;width:100%;font-weight:bold;">40102810045370000067</div>';
+		$html.='<div style="font-size:8pt;text-align:center;">&nbsp;&nbsp;&nbsp;(номер счета (единый казначейский, корр. счет)</div>';
 		
 		$html.='<table style="width:100%;">';
 		$html.='<tr>';
@@ -309,10 +318,10 @@ function make_pdf_rec($data){
 		$html.='</tr>';
 		$html.='</table>';
 		
-		$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
+		$html.='<div style="text-align:center;width:100%;margin-bottom:10px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (020/024)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (О21/14)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>';
 		
 		$html.='<p>Плательщик (ФИО) '.$_POST['fam_parent'].' '.$_POST['name_parent'].' '.$_POST['pat_parent'].'</p>';
@@ -333,7 +342,12 @@ function make_pdf_rec($data){
 		
 		$mpdf = new Mpdf(['mode' => 'ru-RU', 'format' => [230, 236]]); 
 		$mpdf->WriteHTML($html); 
-		return $mpdf->Output("Квитанция.pdf",'S');
+		
+		if($save)
+		{
+			return $mpdf->Output("Квитанция.pdf",'S');
+		}
+		return $mpdf->Output("Квитанция_".$_POST['fam'].".pdf",'I');
 		
 		/* это старое
 		$mpdf = new mPDF('ru-RU','A4','','',5,5,5,10,1,1);//(left,right,top,bottom)
@@ -366,6 +380,7 @@ function make_pdf_rec($data){
 
     return $data;
   }
+
 
 
 

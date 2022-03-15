@@ -32,11 +32,11 @@ $query.=" '".$ruk."', '".$log."', '".$pas."')";
 
 //echo $query;
 
-if (set_raw($query))
+if ($id_students=set_raw($query))
 {
 	//получим id_students только что добавленного пользователя
 	$res=get_raw("SELECT `id_students` FROM `students` WHERE `log`='".$log."' AND `pas`='".$pas."'");
-	$id_students=$res[0]['id_students'];
+	//$id_students=$res[0]['id_students'];
 	
 	$query="INSERT INTO `parents` (`id_parents`, `id_srudents`, ";
 	$query.=" `fam`, `name`, `otch`, `adress`, ";
@@ -45,7 +45,7 @@ if (set_raw($query))
 	$query.=" '".$fam_parent."', '".$name_parent."', '".$pat_parent."', '".$adress."', ";
 	$query.=" '".$seriya."', '".$nomer."', '".$email."')";
 	
-	if ($id_students=set_raw($query))
+	if (set_raw($query))
 	{
 		$result['error']='false';
 		$result['id_students']=$id_students;
@@ -59,15 +59,17 @@ if (set_raw($query))
 		<p>Логин: <b>'.$log.' </b></p>
 		<p>Пароль: <b>'.$pas.'</b></p>
 		<p>Руководитель: <b>'.$ruk.'</b></p>
-		<p>Квитанция на оплату прикреплена к письму.</p>
-		<p>Спасибо за проявленный интерес к изучению башкирского языка. Напоминаем, что олимпиада будет проходить с 1 по 15 апреля.</p>
+		<p>Квитанция на оплату прикреплена к письму (если оплата будет производиться по квитанции, для установления нами факты оплаты участия 
+		необходимо скан копию чека, ФИО участника отправить на почтовый ящик fbftest.strbsu@yandex.ru)</p>
+		<p>Спасибо за проявленный интерес к изучению башкирского языка. Напоминаем, что олимпиада будет проходить 17,18,19 марта 2021 г.</p> 
 		<p><strong>Всего Вам доброго!</strong></p>
 		<br>
-		<p>Дополнительная информация у организаторов олимпиады по телефону <b>8-917-857-44-33!</b></p>
+		<p>Email для справок – fbftest.strbsu@yandex.ru</p>
+		<p>Телефон для справок – 89174214705 (Саляхова Зугура Идрисовна)</p>
 		<br><br><br>------------<br>С уважением, организаторы Республиканской интернет-олимпиады!';
 
-		send_mail($email,$header,$text,true,$_POST);    
-
+		$mail=send_mail($email,$header,$text,true,$_POST);    
+		$result['mail']=$mail['msg'];
 		echo json_encode($result);
 	}
 	else

@@ -18,10 +18,21 @@
     		<img src="/assets/img/str_left.png" style="height:70px;float:right">
     	</div>
     </div>
+	
 
 <!--Multi Step Wizard Start-->
 <div id="rms-wizard" class="rms-wizard">
+
     <div class="sf_bgu">
+	<!--
+	<center>
+	<div style="display: block;padding: 20px;">
+		<a href="https://fbftest.strbsu.ru/fbf-test/" style="padding: 10px;">
+			<button style="padding: 5px 10px;">перейти к тестированию</button>
+		</a>
+	</div>
+    </center>
+	-->
         <!--Wizard Container-->        
             <div class="rms-container">
                <!--Wizard Header-->
@@ -70,8 +81,9 @@
             						</label>
             					</div>
             				</div>
+							
                             <span class="next">
-                                <p onclick="next_step(this)" class="btn">Далее
+                               <!-- <p onclick="next_step(this)" class="btn">Далее-->
                                 </p>
                             </span>
             				
@@ -89,8 +101,9 @@
         
     </div><!--background-color-->
     <!--Wizard Container Close-->
+    <?php include('functions.php');?>
     <div class="footer">
-        © 2020 Стерлитамакский филиал БашГУ, все права защищены
+        ©  <?php echo get_setting()['year']?> Стерлитамакский филиал БашГУ, все права защищены
     </div>
 </div>
 <!--Multi Step Wizard Close-->

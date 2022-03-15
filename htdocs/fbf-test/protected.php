@@ -44,6 +44,7 @@ session_start();
 			<p>Желаем удачи!</p>
 			
 			<?php
+			/*
 			if ($_SESSION['category']==4)
 			{ 
 				?>
@@ -74,7 +75,7 @@ session_start();
 				<?php
 			}
 			else
-			{
+			{*/
 			?>
 			
 			<div type='submit' name='nach' class='push_button red' style="left: 50%;position: absolute; margin-left: -100px;">
@@ -82,7 +83,7 @@ session_start();
 			</div>		
 			
 			<?php
-			}
+			/*}*/
 			?>
 		</div>
 		<?php }
@@ -107,7 +108,7 @@ session_start();
 			<img src="images/ornam_ln.png" style="float:left;margin-top:-100px;"/>
 			<img src="images/ornam_pn.png" style="float:right;margin-top:-100px;"/>
 			
-		 © 2018 Стерлитамакский филиал БашГУ, все права защищены
+		 © 2021 Стерлитамакский филиал БашГУ, все права защищены
 	</div>
 	 </div>
 	 

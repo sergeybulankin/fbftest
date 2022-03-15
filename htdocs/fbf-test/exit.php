@@ -66,7 +66,7 @@
 			<img src="images/ornam_ln.png" style="float:left;margin-top:-100px;"/>
 			<img src="images/ornam_pn.png" style="float:right;margin-top:-100px;"/>
 			
-		 © 2018 Стерлитамакский филиал БашГУ, все права защищены
+		 © 2021 Стерлитамакский филиал БашГУ, все права защищены
 	</div>
 	 </div>
 	 
