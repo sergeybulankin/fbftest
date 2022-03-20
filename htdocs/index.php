@@ -83,7 +83,7 @@
             				</div>
 							
                             <span class="next">
-                               <!-- <p onclick="next_step(this)" class="btn">Далее-->
+                                <p onclick="next_step(this)" class="btn">Далее
                                 </p>
                             </span>
             				

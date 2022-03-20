@@ -136,7 +136,7 @@ function has_answer()//проверяем отвечал ли пользоват
   //$mail->Username = 'fbftest.strbsu';
   $mail->Username = 'fbftest.strbsu@mail.ru';
   //$mail->Password = 'fbftest2019'; // Ваш пароль 
-  $mail->Password = 'IspAa1TO%iy1'; // Ваш пароль 
+  $mail->Password = 'S0s9M3QfZUpHDJmSYmPY'; // Ваш пароль
   
   $mail->CharSet = 'UTF-8';
   $mail->SMTPSecure = 'SSL';  
@@ -254,7 +254,7 @@ function make_pdf_rec($data, $save = true){
 		//$html.='<div style="text-align:center;width:100%;margin-bottom:0px;">'.$_GET['fam'].' '.$_GET['name'].' '.$_GET['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (О21/14)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (O22/13)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>'; 
 		
 		//$html.='<p>Плательщик (ФИО) ______________________________________________________________________________________</p>';
@@ -321,7 +321,7 @@ function make_pdf_rec($data, $save = true){
 		$html.='<div style="text-align:center;width:100%;margin-bottom:10px;">'.$_POST['fam'].' '.$_POST['name'].' '.$_POST['pat'].'</div>';
 		$html.='<div style="text-align:center;font-size:8pt;width:100%">(фио ученика/студента)</div>';
 		
-		$html.='<p style="text-decoration:underline;">Договор  (О21/14)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
+		$html.='<p style="text-decoration:underline;">Договор  (O22/13)<span style="text-decoration:none;text-indent:60px;"> ОРГВЗНОС УЧАСТНИКА МЕРОПРИЯТИЯ</span></p>';
 		//$html.='<div style="text-align:center;font-size:8pt;width:100%">(курс, форма обучения, факультет)</div>';
 		
 		$html.='<p>Плательщик (ФИО) '.$_POST['fam_parent'].' '.$_POST['name_parent'].' '.$_POST['pat_parent'].'</p>';

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/graph_cache" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/includes" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/iccprofiles" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/font" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/examples" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/patterns" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/mpdfi" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/qrcode" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/pclzip/pclzip" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/utils" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/tmp" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/ttfonts" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/ttfontdata" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/phpoffice/common" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/phpoffice/phppresentation" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/PHPExcel-1.8/Classes" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/composer" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/PHPExcel-1.8/Documentation" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/PHPExcel-1.8/Examples" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/classes" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/collations" />
+    </include_path>
+  </component>
+</project>

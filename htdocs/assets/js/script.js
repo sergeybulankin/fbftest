@@ -103,7 +103,10 @@
 										if (seriya=='') { print_error("seriya"); count_of_error++;}
 										
 										//Номер
-										var nomer=$('[name="nomer"]').val().replace(/\s*/g,'');
+										var nomer=$('[name="nomer"]').val().replace(/\s*/g,'').replace(/\s*_/g,'');
+										console.log("Тип number:");
+										console.log(typeof nomer);
+										console.log(nomer);
 										if (nomer=='') { print_error("nomer"); count_of_error++;}
 										
 										//Email
