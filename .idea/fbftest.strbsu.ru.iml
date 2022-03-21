@@ -28,6 +28,7 @@
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/pclzip/pclzip" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/phpmailer/phpmailer" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/phpoffice/common" />
+      <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/phpoffice/phpexcel" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/phpoffice/phppresentation" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/phpoffice/phpspreadsheet" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/vendor/psr/log" />

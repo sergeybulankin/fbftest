@@ -33,6 +33,7 @@
       <path value="$PROJECT_DIR$/htdocs/vendor/PHPExcel-1.8/Examples" />
       <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/classes" />
       <path value="$PROJECT_DIR$/htdocs/vendor/mpdf60/collations" />
+      <path value="$PROJECT_DIR$/htdocs/vendor/phpoffice/phpexcel" />
     </include_path>
   </component>
 </project>

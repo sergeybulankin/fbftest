@@ -1,6 +1,7 @@
 <?php
 include 'functions.php';
-$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_4_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
+$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
+//$filepath='achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
 
 function readExelFile($filepath)
 				{
@@ -68,7 +69,7 @@ function readExelFile($filepath)
 		$query.=" VALUES (NULL, ";
 		$query.=" '".($k)."', '".$number_true."', '4', ";
 		$query.=" '".$question."', '".$one."', '".$two."', '".$three."', '".$four."');";
-		//set_raw($query);  
+		//set_raw($query);
 		echo '<br>'.$query.'<br>';
 		$k++;
 	}
