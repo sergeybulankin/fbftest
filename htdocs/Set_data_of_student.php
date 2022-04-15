@@ -44,7 +44,7 @@ if ($id_students=set_raw($query))
 	$query.=" (NULL, '".$id_students."', ";
 	$query.=" '".$fam_parent."', '".$name_parent."', '".$pat_parent."', '".$adress."', ";
 	$query.=" '".$seriya."', '".$nomer."', '".$email."')";
-	
+	// TODO исправить почтовыйы ящик и данные факультета
 	if (set_raw($query))
 	{
 		$result['error']='false';

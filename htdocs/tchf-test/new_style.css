@@ -1,0 +1,387 @@
+html
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14pt;
+	min-width: 900px;
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+
+#login-box {
+	width: 485px;
+    height: 410px;
+    color: #ebebeb;
+    background: url(images/login-box-green.png) no-repeat left top;
+    left: 50%;
+    position: relative;
+    margin-left: -242px;
+    margin-top: 80px;
+	padding-bottom: 80px;
+}
+
+#login-box h2 {
+	padding:0;
+	margin:0;
+	color: #ebebeb;
+}
+
+#login-box p
+{
+	color: rgb(224,232,243);
+    font-size: 24pt;
+    font-weight: normal;
+    position: relative;
+    padding-top: 60px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+
+.block_log
+{
+	padding:20px 80px;
+}
+
+.block_log span
+{
+	display:block;
+	margin-bottom:5px;
+	padding-left:5px;
+}
+
+.block_log input
+{
+	height:30px;
+	line-height:30px;
+	width:100%;
+	margin-bottom: 25px;
+	font-size:12pt;
+    font-weight: bold;
+    color: #100f0f99;
+    padding-left: 5px;
+}
+
+
+.sendsubmit {
+			width:  103px;  
+			height: 42px; 
+			margin: 0 auto;
+			padding:0;
+			border: 0;
+			position:relative;
+			background: transparent url(images/vhod1.png)  no-repeat center top;
+			cursor: pointer; 
+			cursor: hand; 
+}
+
+
+.sendsubmit:hover {
+	top:1px;
+}
+
+.my_error
+{
+	display:none;
+	color: rgb(255,151,43);
+    font-size: 12pt;
+    text-align: center;
+    padding: 15px;
+}
+
+.hello_block
+{
+	position: relative;
+    left: 50%;
+    width: 700px;
+    height: auto;
+    margin-left: -300px;
+    top: -30px;
+    font-size: 16pt;
+    line-height: 35px;
+    color: rgb(91,46,73);
+    text-align: left;
+    font-weight: bold;
+	padding-bottom:60px;
+}
+
+.hello_block h1
+{
+	margin:0px;
+	text-align:center;
+	font-size:18pt;
+}
+
+
+
+.push_button {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    background: rgba(2, 107, 107, 0.88);
+    box-shadow: 0 -3px rgb(2, 107, 107) inset;
+    transition: 0.2s;
+    cursor: pointer;
+    width: max-content;
+    padding: 5px 10px;
+}
+
+.push_button:hover {
+	background: #026b6bd6;
+}
+
+
+.push_button_two {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    background: rgb(11, 95, 95);
+    box-shadow: 0 -3px rgb(5, 78, 78) inset;
+    transition: 0.2s;
+    cursor: pointer;
+    width: max-content;
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+}
+
+.push_button_two:hover {
+	background: rgba(5, 85, 85, 0.65);
+}
+
+
+
+	.header {
+		
+		height: 60px;
+		color: rgb(224,232,243);
+		background-color: rgb(2,107,107);
+		font-size: 24pt;
+		text-align: center;
+		line-height: 60px;
+		
+	}
+	
+	.main {
+	position: relative;
+	min-height: 600px;
+	height:100%; 
+	}
+	
+	.footer {
+		position: absolute;
+		bottom:0px;
+		width: 100%;
+		height: 40px;
+		color: rgb(224,232,243);
+		text-align: center;
+		background-color: rgb(2,107,107);
+		font-size: 10pt;
+		line-height: 40px;
+	}
+	
+	.hello_block p
+	{
+		margin: 10px 0px;
+		line-height:25px;
+	}
+	
+	.block_num_quest,.time
+	{
+		color: rgb(256,256,256);
+		font-weight: bold; 
+		display:inline-block;
+		margin-left: 30px;
+	}
+	
+	.time
+	{
+		display:inherit;
+		min-width: 665px;
+	}
+	
+	.time img
+	{
+		display: inline-block;
+		vertical-align: bottom;
+		padding-bottom: 5px;
+		margin-left: 10px;
+		padding-top: 5px;
+	}
+	
+	.navigation
+	{
+		width: auto;
+		margin: 0px;
+		padding-left: 0px;
+		display: inline-block;
+		margin: 0px 15px;
+	}
+	
+	.navigation li {
+    display: inline-block;
+    list-style: none;
+    margin: 3px 3px;
+    font-size: 10pt;
+    width: 37px;
+    height: 37px;
+    border: 2px solid rgb(108,54,78);
+    font-size: 16pt;
+    line-height: 37px;
+	cursor:pointer;
+	}
+	
+	.navigation li:hover {
+    background-color: #064040;
+    color: #ffffff;
+    border: 2px solid #ffff;
+	}
+	
+	.select li
+	{
+	background-color: #064040;
+    color: #ffffff;
+    border: 2px solid #ffff;
+	}
+	
+	.angle-left,.angle-right
+	{
+		display: inline-block;
+		height: auto;
+		font-size: 42pt;
+		margin-top: -7px;
+	}
+	
+	.angle-left i, .angle-right i
+	{
+		cursor:pointer;
+	}
+	
+	.angle-left i:hover, .angle-right i:hover
+	{
+		color:#562c3f;
+	}
+	
+
+	.left_block
+	{
+		display:flex;
+		padding: 15px 0px;
+		padding: 15px 0px;
+		padding-left: 30px;
+		min-width: 700px;
+	}
+	
+	.right_block
+	{
+		display: inline-block;
+		margin-right: 30px;
+		padding: 15px 0px;
+	}
+	
+	.block_with_question
+	{
+		padding: 30px;
+		font-size: 18pt;
+		color: #023838;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	#question
+	{
+		margin-bottom:20px;
+		line-height: 35px;
+	}
+	
+	.answer
+	{
+		margin: 10px 0px;
+		margin-left: 20px;
+		cursor:pointer;
+	}
+	
+	.answer label
+	{
+		cursor:pointer;
+	}
+	
+
+	.answer .checkradios-radio 
+	{
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    border: 2px solid #026b6b;
+    color: #026b6b;
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    padding: 0.2em;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    overflow: hidden;
+	}
+	
+	.select_num_question 
+	{
+		background-color: #064040;
+		color: #ffffff;
+		border: 2px solid #ffff;
+	}
+	
+	#close_test
+	{
+		position: absolute;
+		background-color: #026b6b;
+		right: 10px;
+		top: -100px;
+		border-radius: 3px;
+		border: 1px solid #054e4e;
+		padding: 5px 10px;
+		height: 80px;
+		font-weight: bold;
+		display:none;
+	}
+	
+	.small_button
+	{
+		display: inline-block;
+		background-color: #058888e0;
+		width: 60px;
+		height: 30px;
+		line-height: 30px;
+		border: 1px solid #085656;
+		border-radius: 3px;
+		margin: 0px 40px;
+	}
+	
+	.small_button:hover {
+		cursor: pointer;
+		background-color: #047373;
+		border-color: white;
+	}
+	
+	.close_window
+	{
+		position: absolute;
+		top: 70px;
+		right: 10px;
+		color: red;
+		font-size: 10pt;
+		font-weight: bold;
+		display:none;
+	}

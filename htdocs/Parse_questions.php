@@ -1,10 +1,17 @@
 <?php
+/**
+ * Категории
+ *
+ * 1(1-4кл);
+ * 2(5-8кл);
+ * 3(9-11кл);
+ * 4(студенты)
+ */
 include 'functions.php';
-$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
-//$filepath='achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
+//$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
+$filepath='tchf_archive_questions_2022/questions_0.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
 
-function readExelFile($filepath)
-				{
+function readExelFile($filepath) {
 				require_once 'vendor/phpoffice/phpexcel/Classes/PHPExcel.php'; //подключаем наш фреймворк
 				$ar=array(); // инициализируем массив
 				
@@ -28,31 +35,19 @@ function readExelFile($filepath)
 		
 		$one=$arr[$i+1][0];
 		
-		if ($arr[$i+1][1]==1)
-		{
-			$number_true=1;
-		}
+		if ($arr[$i+1][1]==1) $number_true=1;
 		
 		$two=$arr[$i+2][0];
 		
-		if ($arr[$i+2][1]==1)
-		{
-			$number_true=2;
-		}
-		
+		if ($arr[$i+2][1]==1) $number_true=2;
+
 		$three=$arr[$i+3][0];
 		
-		if ($arr[$i+3][1]==1)
-		{
-			$number_true=3;
-		}
-		
+		if ($arr[$i+3][1]==1) $number_true=3;
+
 		$four=$arr[$i+4][0];
 		
-		if ($arr[$i+4][1]==1)
-		{
-			$number_true=4;
-		}
+		if ($arr[$i+4][1]==1) $number_true=4;
 		
 		$i=$i+5;
 		
@@ -69,7 +64,7 @@ function readExelFile($filepath)
 		$query.=" VALUES (NULL, ";
 		$query.=" '".($k)."', '".$number_true."', '4', ";
 		$query.=" '".$question."', '".$one."', '".$two."', '".$three."', '".$four."');";
-		//set_raw($query);
+		set_raw($query);
 		echo '<br>'.$query.'<br>';
 		$k++;
 	}

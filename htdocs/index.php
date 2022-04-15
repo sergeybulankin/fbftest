@@ -38,7 +38,7 @@
                <!--Wizard Header-->
                 <div class="rms-wizard-header">
                     <h2 class="title">
-            		<span>Республиканская олимпиада по башкирскому языку</span><br>
+            		<span>Республиканская интернет-олимпиада по чувашскому языку</span><br>
             		<span style="color: #a8a8a8;font-size: 12pt;">регистрация</span>
             		</h2>
                 </div>
