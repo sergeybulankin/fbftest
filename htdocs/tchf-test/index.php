@@ -16,7 +16,7 @@
      <body>
     <div class="main">
         <div class="header">
-        Башҡорт теленән интернет-олимпиада
+            Интернет-сыуаш теле буйынса олимпиада
         </div>
         <img src="images/ornam_lv.png" style="float:left;"/>
         <img src="images/ornam_pv.png" style="float:right;"/>

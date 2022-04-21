@@ -9,19 +9,19 @@
  */
 include 'functions.php';
 //$filepath='/home/strbsuru/html/fbftest.strbsu.ru/htdocs/achive_questions_2021/voprosi_1_2021.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
-$filepath='tchf_archive_questions_2022/questions_0.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
+$filepath='tchf_archive_questions_2022/q_4.xlsx'; //$_SERVER['DOCUMENT_ROOT'].
 
 function readExelFile($filepath) {
-				require_once 'vendor/phpoffice/phpexcel/Classes/PHPExcel.php'; //подключаем наш фреймворк
-				$ar=array(); // инициализируем массив
-				
-				$inputFileType = PHPExcel_IOFactory::identify($filepath);  // узнаем тип файла, excel может хранить файлы в разных форматах, xls, xlsx и другие
-				$objReader = PHPExcel_IOFactory::createReader($inputFileType); // создаем объект для чтения файла
-				$objPHPExcel = $objReader->load($filepath); // загружаем данные файла в объект
-				$ar = $objPHPExcel->getActiveSheet()->toArray(); // выгружаем данные из объекта в массив
-				//unlink($filepath);//удаляем файл после выгрузки
-				return $ar;// $ar; //возвращаем массив
-				}
+    require_once 'vendor/phpoffice/phpexcel/Classes/PHPExcel.php'; //подключаем наш фреймворк
+    $ar=array(); // инициализируем массив
+
+    $inputFileType = PHPExcel_IOFactory::identify($filepath);  // узнаем тип файла, excel может хранить файлы в разных форматах, xls, xlsx и другие
+    $objReader = PHPExcel_IOFactory::createReader($inputFileType); // создаем объект для чтения файла
+    $objPHPExcel = $objReader->load($filepath); // загружаем данные файла в объект
+    $ar = $objPHPExcel->getActiveSheet()->toArray(); // выгружаем данные из объекта в массив
+    //unlink($filepath);//удаляем файл после выгрузки
+    return $ar;// $ar; //возвращаем массив
+}
 	$arr=readExelFile($filepath); 
 	//print_r($arr); 
 	
